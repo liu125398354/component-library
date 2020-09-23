@@ -4,18 +4,23 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const constRoutes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/Search',
+    component: () => import('@/views/tab/v-search'),
+    hidden: true
   }
 ]
 
 const router = new VueRouter({
   // mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: constRoutes
 })
 
 export default router
