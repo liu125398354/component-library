@@ -8,7 +8,7 @@
 
 <script>
   // @ is an alias to /src
-  import Search from '@/components/Search'
+  import Search from '@/components/cSearch'
   const ONE = 0
   const SECOND = 1
   export default {

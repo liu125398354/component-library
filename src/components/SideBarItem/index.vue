@@ -1,12 +1,16 @@
 <template>
-  <el-submenu v-if="menu.children && menu.children.length" :index="menu.path" :popper-append-to-body="false">
-    <template slot="title">{{ menu.title }}</template>
+  <el-submenu v-if="menu.children && (menu.children.length > 1)" :index="menu.path" :popper-append-to-body="false">
+    <template slot="title">{{ menu.meta.title }}</template>
     <div v-for="(submenu, index) in menu.children" :key="index">
-      <el-menu-item :index="submenu.path">{{ submenu.title }}</el-menu-item>
-      <side-bar-item v-if="submenu.children && submenu.children.length" :menu="submenu"></side-bar-item>
+      <side-bar-item v-if="submenu.children && (submenu.children.length > 1)" :menu="submenu"></side-bar-item>
+      <router-link v-else :to="menu.path + '/' + submenu.path">
+        <el-menu-item :index="menu.path + '/' + submenu.path">{{ submenu.meta.title }}</el-menu-item>
+      </router-link>
     </div>
   </el-submenu>
-  <el-menu-item v-else :index="menu.path" :key="index">{{ menu.title }}</el-menu-item>
+  <router-link v-else :to="menu.path + menu.children[0].path">
+    <el-menu-item :index="menu.path + menu.children[0].path" :key="index">{{ menu.children[0].meta.title }}</el-menu-item>
+  </router-link>
 </template>
 
 <script>

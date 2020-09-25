@@ -16,10 +16,10 @@
                       class="el-menu-demo"
                       text-color="#fff"
                       active-text-color="#fff"
-                      :default-active="activeIndex"
+                      :default-active="activeMenu"
                       mode="horizontal"
                       menu-trigger="hover">
-                <template v-for="(menu, index) in menus">
+                <template v-for="(menu, index) in routes">
                   <side-bar-item :menu="menu" :key="index"></side-bar-item>
                 </template>
               </el-menu>
@@ -36,48 +36,16 @@
 // @ is an alias to /src
 import SideBarItem from '@/components/SideBarItem'
 import AppMain from '@/components/AppMain'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Home',
-  data() {
-    return {
-      menus: [{
-        title: '首页',
-        path: '1'
-      }, {
-        title: '我的组件',
-        path: '2',
-        children: [{
-          title: '选项1',
-          path: '2-1'
-        },
-        {
-            title: '选项2',
-            path: '2-2'
-        },
-        {
-          title: '选项3',
-          path: '2-3',
-          children: [{
-            title: '选项4',
-            path: '2-3-1'
-          },
-            {
-              title: '选项5',
-              path: '2-3-2'
-            },
-            {
-              title: '选项6',
-              path: '2-3-3'
-            }]
-        }]
-      }, {
-        title: '期待一',
-        path: '3'
-      }, {
-        title: '期待二',
-        path: '4'
-      }],
-      activeIndex: '1'
+  computed: {
+    ...mapGetters({
+      routes: 'routes/routes'
+    }),
+    activeMenu() {
+      const route = this.$route
+      return route.path
     }
   },
   components: {
