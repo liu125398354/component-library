@@ -1,7 +1,7 @@
 <template>
   <div class="time-line-container">
     <div class="time-up">
-      <span v-show="progress.actualTime !== '～'" class="item-symbol">
+      <span v-show="progress.actualTime" class="item-symbol">
         <svg-icon icon-class="right" style="width: 20px;height: 20px;"/>
       </span>
       <div class="time-des">

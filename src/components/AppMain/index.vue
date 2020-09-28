@@ -23,6 +23,6 @@
  .app-main
    position: relative
    width: 100%
-   margin-top: 70px
+   margin-top: 65px
    overflow: hidden
 </style>

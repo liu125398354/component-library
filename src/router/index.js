@@ -13,7 +13,7 @@ export const constRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/tab/SequenceDiagram'),
+        component: () => import('@/views/tab/Home'),
         meta: {
           title: '首页',
           affix: true
