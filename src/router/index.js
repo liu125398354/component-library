@@ -22,20 +22,40 @@ export const constRoutes = [
     ]
   },
   {
-    path: '/vab',
+    path: '/tab',
     component: Layout,
     redirect: 'noRedirect',
     meta: { title: '我的组件' },
     children: [
       {
-        path: 'permissions',
+        path: 'sd',
         component: () => import('@/views/tab/SequenceDiagram'),
         meta: {
           title: '时序图'
         }
       },
       {
-        path: '/vab/icon',
+        path: '/tab/preview',
+        component: EmptyLayout,
+        redirect: 'noRedirect',
+        meta: {
+          title: '预览'
+        },
+        children: [
+          {
+            path: 'previewImage',
+            component: () => import('@/views/tab/PreviewImg'),
+            meta: { title: '预览多张图片' }
+          },
+          {
+            path: 'previewPoster',
+            component: () => import('@/views/tab/PreviewImg'),
+            meta: { title: '预览单张图片' }
+          }
+        ]
+      },
+      {
+        path: '/tab/search',
         component: EmptyLayout,
         redirect: 'noRedirect',
         meta: {
@@ -43,24 +63,34 @@ export const constRoutes = [
         },
         children: [
           {
-            path: 'awesomeIcon',
+            path: 'same',
             component: () => import('@/views/tab/cBtnSearch'),
             meta: { title: '按钮输入框同一列' }
           },
           {
-            path: 'remixIcon',
+            path: 'diff',
             component: () => import('@/views/tab/sBtnSearch'),
             meta: { title: '按钮输入框不同列' }
           }
         ]
       }
-      // {
-      //   path: '预览',
-      //   component: () => import('@/views/tab/ee'),
-      //   meta: { title: '验证码' }
-      // }
     ]
-  }
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: 'sd',
+    children: [
+      {
+        path: 'sd',
+        component: () => import('@/views/tab/SequenceDiagram'),
+        meta: {
+          title: '时序图',
+          affix: true
+        }
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({

@@ -12,7 +12,7 @@
   export default {
     computed: {
       key() {
-        console.log('路径--->', this.$route.path)
+        // console.log('路径--->', this.$route.path)
         return this.$route.path
       }
     }
