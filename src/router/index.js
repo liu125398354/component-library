@@ -43,14 +43,14 @@ export const constRoutes = [
         },
         children: [
           {
-            path: 'previewImage',
-            component: () => import('@/views/tab/PreviewImg'),
-            meta: { title: '预览多张图片' }
+            path: 'previewPoster',
+            component: () => import('@/views/tab/PreviewSingleImg'),
+            meta: { title: '预览单张图片' }
           },
           {
-            path: 'previewPoster',
-            component: () => import('@/views/tab/PreviewImg'),
-            meta: { title: '预览单张图片' }
+            path: 'previewImage',
+            component: () => import('@/views/tab/PreviewMultipleImg'),
+            meta: { title: '预览多张图片' }
           }
         ]
       },
@@ -90,7 +90,7 @@ export const constRoutes = [
         }
       }
     ]
-  },
+  }
 ]
 
 const router = new VueRouter({
