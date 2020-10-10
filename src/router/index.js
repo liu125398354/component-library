@@ -29,9 +29,9 @@ export const constRoutes = [
     children: [
       {
         path: 'sd',
-        component: () => import('@/views/tab/SequenceDiagram'),
+        component: () => import('@/views/tab/FileUpload'),
         meta: {
-          title: '时序图'
+          title: '文件上传进度'
         }
       },
       {
