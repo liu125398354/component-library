@@ -25,7 +25,7 @@
       previewPoster(appPosterPath) {
         this.posterPic = appPosterPath
         if (!this.posterPic) {
-          this.posterPic = require('@/assets/default.png')
+          this.posterPic = require('@/assets/img/default.png')
         }
         this.previewPosterDialog = true
       },

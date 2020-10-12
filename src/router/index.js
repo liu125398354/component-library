@@ -51,6 +51,11 @@ export const constRoutes = [
             path: 'previewImage',
             component: () => import('@/views/tab/PreviewMultipleImg'),
             meta: { title: '预览多张图片' }
+          },
+          {
+            path: 'previewView',
+            component: () => import('@/views/tab/PreviewVideo'),
+            meta: { title: '预览视频' }
           }
         ]
       },
