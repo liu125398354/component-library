@@ -53,9 +53,14 @@ export const constRoutes = [
             meta: { title: '预览多张图片' }
           },
           {
-            path: 'previewView',
+            path: 'previewVideo',
             component: () => import('@/views/tab/PreviewVideo'),
             meta: { title: '预览视频' }
+          },
+          {
+            path: 'previewAudio',
+            component: () => import('@/views/tab/PreviewAudio'),
+            meta: { title: '预览音频' }
           }
         ]
       },

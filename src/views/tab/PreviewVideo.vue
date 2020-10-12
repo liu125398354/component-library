@@ -1,6 +1,6 @@
 <template>
   <div class="p-video">
-    <el-button type="primary" @click="preview">预览视频</el-button>
+    <el-button type="primary" @click="preview">播放视频</el-button>
     <preview-video
       @clearPreVideo="clearPreBlob"
       :videoBlob="altBlob"
