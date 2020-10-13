@@ -7,6 +7,20 @@ const fs = require('fs')
 const formidable = require('formidable')
 const router = express.Router()
 
+router.post('/api/video/getblob', (req, res) => {
+  try {
+    let data = fs.readFileSync('../src/assets/video/example.mp4')
+    console.log(data)
+    res.json({
+      errno: 1,
+      data: data
+    })
+  } catch (e) {
+    console.log('error')
+    res.send(e)
+  }
+})
+
 router.post('/api/apk/upload', (req, res) => {
   function common(allFiles) {
     let oldPath = __dirname + '/' + allFiles.path

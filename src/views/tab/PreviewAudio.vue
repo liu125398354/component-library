@@ -1,6 +1,6 @@
 <template>
   <div class="p-music">
-    <el-button type="success" @click="preview">播放音频</el-button>
+    <el-button type="success" plain @click="preview">播放音频</el-button>
     <preview-music
       @clearPreMusic="clearPreMp3"
       :musicBlob="altMusic"
