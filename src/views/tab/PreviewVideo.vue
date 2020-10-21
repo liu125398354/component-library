@@ -44,7 +44,7 @@
         axios.post('/api/video/getblob').then(res => {
           console.log(res.data.data)
           let buf = Buffer.from(res.data.data, 'binary')
-          console.log(buf)
+          // console.log(buf)
           let blob = new Blob([buf])
           this.altBlob = URL.createObjectURL(blob)
           this.videoLoading = false

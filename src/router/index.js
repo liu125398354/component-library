@@ -35,6 +35,26 @@ export const constRoutes = [
         }
       },
       {
+        path: '/tab/verify',
+        component: EmptyLayout,
+        redirect: 'noRedirect',
+        meta: {
+          title: '验证码'
+        },
+        children: [
+          {
+            path: 'Alphanumeric',
+            component: () => import('@/views/tab/NumLetterVerify'),
+            meta: { title: '数字字母验证码' }
+          },
+          {
+            path: 'graphical',
+            component: () => import('@/views/tab/GraphicalVerify'),
+            meta: { title: '图形验证码' }
+          }
+        ]
+      },
+      {
         path: '/tab/preview',
         component: EmptyLayout,
         redirect: 'noRedirect',
