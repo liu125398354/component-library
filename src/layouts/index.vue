@@ -6,7 +6,7 @@
           <el-row>
             <el-col :xl="7" :lg="7" :md="7" :sm="7" :xs="7">
               <div class="logo-container-horizontal">
-                <svg-icon class="vue-icon" icon-class="vueIcon"></svg-icon>
+                <svg-icon class="vue-icon" icon-class="dream"></svg-icon>
                 <span class="title">vue-components</span>
               </div>
             </el-col>
