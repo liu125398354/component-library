@@ -13,7 +13,7 @@ export const constRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/tab/Home'),
+        component: () => import('@/views/Home'),
         meta: {
           title: '首页',
           affix: true
@@ -113,9 +113,24 @@ export const constRoutes = [
     children: [
       {
         path: 'sd',
-        component: () => import('@/views/tab/SequenceDiagram'),
+        component: () => import('@/views/SequenceDiagram'),
         meta: {
           title: '时序图',
+          affix: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: 'maxFile',
+    children: [
+      {
+        path: 'maxFile',
+        component: () => import('@/views/MaxFileUpload'),
+        meta: {
+          title: '大文件上传',
           affix: true
         }
       }
