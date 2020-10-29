@@ -11,7 +11,7 @@ const router = express.Router()
 router.post('/api/video/getblob', (req, res) => {
   try {
     let data = fs.readFileSync('../src/assets/video/example.mp4')
-    // console.log(data)
+    // console.log(mockData)
     res.json({
       errno: 1,
       data: data

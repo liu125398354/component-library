@@ -103,6 +103,13 @@ export const constRoutes = [
             meta: { title: '按钮输入框不同列' }
           }
         ]
+      },
+      {
+        path: 'cal',
+        component: () => import('@/views/tab/CalculateDay'),
+        meta: {
+          title: '计算天数'
+        }
       }
     ]
   },
