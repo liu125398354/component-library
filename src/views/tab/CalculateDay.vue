@@ -25,12 +25,17 @@
     methods: {
       searchResult(params) {
         console.log('搜索结果--->', params)
-        let result = cpttUnifiedDetail(params.startDate, params.endDate)
-        this.naturalDay = result.naturalDay
-        let promise = Promise.resolve(result.workingDay)
-        promise.then(res => {
-          this.workingDay = res
-        })
+        if (params.startDate !== '' && params.endDate !== '') {
+          let result = cpttUnifiedDetail(params.startDate, params.endDate)
+          this.naturalDay = result.naturalDay
+          let promise = Promise.resolve(result.workingDay)
+          promise.then(res => {
+            this.workingDay = res
+          })
+        } else {
+          this.naturalDay = 0
+          this.workingDay = 0
+        }
       }
     },
     components: {
