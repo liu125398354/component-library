@@ -34,7 +34,11 @@ function cpttWorkingDay(param1, param2) {
     }
     return delta + weekEnds
   } else {
-    return axios.get('/mock/time.json').then(res => {
+    return axios.get('/mock/time.json', {
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    }).then(res => {
       // 设置法定节假日
       let superArr = res.data.holiday
       // 补班
