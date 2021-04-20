@@ -4,30 +4,32 @@
 
 import SparkMD5 from 'spark-md5'
 
-
 export function handleMinFile(file) {
   return new Promise(function(resolve, reject) {
-    let fileReader = new FileReader()    //创建FileReader实例
-    fileReader.onload = function(e) {    //FileReader的load事件，当文件读取完毕时触发
+    // 创建FileReader实例
+    let fileReader = new FileReader()
+    // FileReader的load事件，当文件读取完毕时触发
+    fileReader.onload = function(e) {
       // e.target指向上面的fileReader实例
-      if (file.size != e.target.result.length) {    //如果两者不一致说明读取出错
+      if (file.size !== e.target.result.length) {
+        // 如果两者不一致说明读取出错
         console.log('ERROR:Browser reported success but could not read the file until the end.')
       } else {
-        resolve(SparkMD5.hashBinary(e.target.result))   //计算md5并返回结果
+        // 计算md5并返回结果
+        resolve(SparkMD5.hashBinary(e.target.result))
       }
     }
-
-    fileReader.onerror = function() {    //如果读取文件出错，取消读取状态并弹框报错
-      running = false
+    // 如果读取文件出错，取消读取状态并弹框报错
+    fileReader.onerror = function() {
+      // running = false
       console.log('ERROR:FileReader onerror was triggered, maybe the browser aborted due to high memory usage.')
     }
-
-    fileReader.readAsBinaryString(file)    //通过fileReader读取文件二进制码
+    // 通过fileReader读取文件二进制码
+    fileReader.readAsBinaryString(file)
   })
 }
 
 export function handleMaxFile(fileRaw) {
-
   return new Promise(function(resolve, reject) {
     let blobSlice = File.prototype.slice || File.prototype.mozSlice || File.prototype.webkitSlice
     let fileReader = new FileReader()
@@ -55,5 +57,4 @@ export function handleMaxFile(fileRaw) {
     }
     loadNext()
   })
-
 }

@@ -27,5 +27,6 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .h-container
+    height: 100%
     background: royalblue
 </style>

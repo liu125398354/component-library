@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <div class="fixed-header">
       <div class="top-bar-container">
         <div class="vab-main">
