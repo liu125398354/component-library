@@ -1,6 +1,7 @@
 <template>
   <div class="h-container">
     <vue-particles
+      class="h-particles"
       color="#dedede"
       :particleOpacity="0.7"
       :particlesNumber="80"
@@ -29,4 +30,6 @@
   .h-container
     height: 100%
     background: royalblue
+    .h-particles
+      height: 100%
 </style>
