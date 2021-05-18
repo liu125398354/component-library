@@ -6,6 +6,8 @@
 const path = require('path')
 const defaultSettings = require('./src/settings')
 
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -29,6 +31,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    host: '192.168.0.125',
     port: port,
     open: true,
     https: false,
@@ -38,7 +41,7 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "http://192.168.0.115:3000/api/",
+        target: "http://192.168.0.125:3000/api/",
         changeOrigin: true,
         secure: false,
         pathRewrite: {
@@ -68,7 +71,14 @@ module.exports = {
       assetFilter: function(assetFilename) {
         return assetFilename.endsWith('.js');
       }
-    }
+    },
+    plugins: [
+      new CopyWebpackPlugin([
+        { from: 'node_modules/@liveqing/liveplayer/dist/component/crossdomain.xml'},
+        { from: 'node_modules/@liveqing/liveplayer/dist/component/liveplayer.swf'},
+        { from: 'node_modules/@liveqing/liveplayer/dist/component/liveplayer-lib.min.js', to: 'js/'}
+      ])
+    ]
   },
   // pages: {
   //   index: {

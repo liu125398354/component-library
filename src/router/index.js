@@ -55,6 +55,26 @@ export const constRoutes = [
         ]
       },
       {
+        path: '/tab/player',
+        component: EmptyLayout,
+        redirect: 'noRedirect',
+        meta: {
+          title: '播放器'
+        },
+        children: [
+          {
+            path: 'livePlayer',
+            component: () => import('@/views/tab/LivePlayer'),
+            meta: { title: '直播/点播' }
+          },
+          {
+            path: 'dPlayer',
+            component: () => import('@/views/tab/dPlayer'),
+            meta: { title: 'DPlayer' }
+          }
+        ]
+      },
+      {
         path: '/tab/preview',
         component: EmptyLayout,
         redirect: 'noRedirect',
@@ -138,6 +158,21 @@ export const constRoutes = [
         component: () => import('@/views/MaxFileUpload'),
         meta: {
           title: '大文件上传',
+          affix: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: 'drawBoard',
+    children: [
+      {
+        path: 'drawBoard',
+        component: () => import('@/views/DrawingBoard'),
+        meta: {
+          title: '画板',
           affix: true
         }
       }
