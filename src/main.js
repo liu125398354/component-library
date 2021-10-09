@@ -9,6 +9,7 @@ import VueParticles from 'vue-particles'
 import '@/styles/reset.styl'
 import './icons' // icon
 import './config/permission'
+
 Vue.use(ElementUI)
 Vue.use(VueParticles)
 Vue.config.productionTip = false

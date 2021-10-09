@@ -35,7 +35,7 @@
         },
         {
           uid: 3,
-          pic: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601448904247&di=dedbe0c8f803a77803cca490fb44c510&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2F201503%2F12%2F212714os44yxxupkvuzys4.jpg'
+          pic: 'https://picsum.photos/1080/720?random=1'
         }],
         imageLoading: false,
         previewImageDialog: false,

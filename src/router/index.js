@@ -162,21 +162,6 @@ export const constRoutes = [
         }
       }
     ]
-  },
-  {
-    path: '/',
-    component: Layout,
-    redirect: 'drawBoard',
-    children: [
-      {
-        path: 'drawBoard',
-        component: () => import('@/views/DrawingBoard'),
-        meta: {
-          title: '画板',
-          affix: true
-        }
-      }
-    ]
   }
 ]
 

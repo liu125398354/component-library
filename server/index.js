@@ -21,7 +21,5 @@ app.get('*', function(req, res) {
   res.send(html);
 });
 
-require('./socketIO')(server);
-
 server.listen(3000);
 console.log('success listen ......');

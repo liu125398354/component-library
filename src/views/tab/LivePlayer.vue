@@ -12,7 +12,7 @@
     },
     data() {
       return {
-        videoUrl: 'http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8'
+        videoUrl: 'http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8'
       }
     }
   }

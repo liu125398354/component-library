@@ -32,6 +32,7 @@
     },
     methods: {
       handleChange(file, fileList) {
+        console.log(file.raw)
         this.fileList.push({
           uid: file.uid,
           file: file.raw

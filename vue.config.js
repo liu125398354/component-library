@@ -31,7 +31,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    host: '192.168.0.125',
+    host: '',
     port: port,
     open: true,
     https: false,
@@ -41,9 +41,9 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "http://192.168.0.125:3000/api/",
+        target: "http://192.168.0.175:3000/api/",
+        ws: true,
         changeOrigin: true,
-        secure: false,
         pathRewrite: {
           "^/api": "/"
         }
