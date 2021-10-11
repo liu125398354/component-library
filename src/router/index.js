@@ -134,6 +134,24 @@ export const constRoutes = [
     ]
   },
   {
+    path: '/api',
+    component: Layout,
+    redirect: 'noRedirect',
+    meta: { title: 'Browser API' },
+    children: [
+      {
+        path: 'ac',
+        component: () => import('@/views/tab/AdobeCaptivate'),
+        meta: { title: '屏幕录制' }
+      },
+      {
+        path: 'cr',
+        component: () => import('@/views/tab/CameraRecording'),
+        meta: { title: '摄像头录制' }
+      }
+    ]
+  },
+  {
     path: '/',
     component: Layout,
     redirect: 'sd',
