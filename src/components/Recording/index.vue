@@ -41,6 +41,10 @@
               cursor: 'always'
             }).then(stream => {
               this.handleMedia(stream)
+              // onend可以捕获到停止共享事件
+              // stream.getVideoTracks()[0].onended = async ()=>{
+              //   console.log('aaaaaa')
+              // }
             }).catch(err => {
               // 获取摄像头失败，可以通过 err.name 或者 err.message 来判断错误原因，err并没有返回错误错误码
               console.log('err--->', err)
