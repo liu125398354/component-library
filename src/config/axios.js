@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const service = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? '/api' : process.env.NODE_ENV === 'production'
-    ? 'https://liu125398354.github.io' : 'https://liu125398354.github.io',
+    ? 'https://liu125398354.github.io/api' : 'https://liu125398354.github.io/api',
   timeout: 10000
 })
 
