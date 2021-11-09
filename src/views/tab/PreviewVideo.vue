@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import videoApi from '@/api/video'
   import PreviewVideo from '@/components/PreviewVideo'
   export default {
     data() {
@@ -41,9 +41,9 @@
       previewBlob() {
         this.previewVideoDialog = true
         this.videoLoading = true
-        axios.post('/api/video/getblob').then(res => {
-          console.log(res.data.data)
-          let buf = Buffer.from(res.data.data, 'binary')
+        videoApi.getVideo().then(res => {
+          console.log(res.data)
+          let buf = Buffer.from(res.data, 'binary')
           // console.log(buf)
           let blob = new Blob([buf])
           this.altBlob = URL.createObjectURL(blob)

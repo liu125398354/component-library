@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import fileApi from '@/api/file'
   import ChunkProgress from '@/components/ChunkProgress'
   import { handleMaxFile } from '@/utils/md5'
   import { loadFromLocal, saveToLocal, removeLocal } from '@/utils/store'
@@ -105,8 +105,8 @@
           let source = { ufMd5: this.uploadMD5 }
           form.append('info', JSON.stringify(source))
         }
-        axios.post('/api/uploadChunk', form).then(res => {
-          console.log('后台返回参数--->', res.data.index)
+        fileApi.uploadMaxFile(form).then(res => {
+          console.log('后台返回参数--->', res.index)
           /**
            * 上传文件请求回调函数中的idx不再使用item+1，而是应用后台返回来的index(使保存到本地的index和实际上传的分片
            一一对应)，请求时间不能设置超时(因为不清楚网络状况)，当idx小于等于loadFromLocal(fileObj.name, 'index')时，
@@ -114,7 +114,7 @@
            回调函数走了两次的问题----->致使存储到本地的index出现错乱
            */
 
-          let idx = parseInt(res.data.index)
+          let idx = parseInt(res.index)
           console.log('请求回调后的idx----->', idx, ' ---- ', loadFromLocal(fileObj.name, 'index'))
           if (idx <= loadFromLocal(fileObj.name, 'index')) {
             return

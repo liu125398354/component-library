@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import fileApi from '@/api/file'
   import MaskProgress from '@/components/MaskProgress'
   export default {
     data() {
@@ -71,8 +71,7 @@
         }
 
         // 调用本地接口
-
-        axios.post('/api/apk/upload', form, config).then(res => {
+        fileApi.uploadCommonFile(form, config).then(res => {
           setTimeout(() => {
             this.detailShow = false
           }, 800)
