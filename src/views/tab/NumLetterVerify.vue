@@ -40,7 +40,7 @@
         return Math.floor(Math.random() * (max - min) + min)
       },
       verifyBtn() {
-        if (this.checkCode === this.identifyCode) {
+        if (this.checkCode.toLowerCase() === this.identifyCode.toLowerCase()) {
           this.$message.closeAll()
           this.$message.success('验证码输入正确')
         } else {

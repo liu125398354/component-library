@@ -45,7 +45,12 @@ export const constRoutes = [
           {
             path: 'Alphanumeric',
             component: () => import('@/views/tab/NumLetterVerify'),
-            meta: { title: '数字字母验证码' }
+            meta: { title: '前端验证' }
+          },
+          {
+            path: 'captcha',
+            component: () => import('@/views/tab/captcha'),
+            meta: { title: '后端验证' }
           },
           {
             path: 'graphical',

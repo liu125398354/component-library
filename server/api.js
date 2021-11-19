@@ -7,6 +7,45 @@ const fs = require('fs')
 const multiparty = require('multiparty')
 const formidable = require('formidable')
 const router = express.Router()
+const svgCaptcha = require('svg-captcha')
+
+router.get('/api/captcha', (req, res) => {
+  let captcha = svgCaptcha.create({
+    size: 4,
+    ignoreChars: '0o1i',
+    noise: 2,
+    color: true
+  })
+  console.log('aaaa', req.query)
+  req.session[req.query.sid] = captcha.text.toLowerCase()
+  console.log('text--->', captcha.text)
+  res.json({
+    code: 0,
+    data: captcha.data
+  })
+})
+
+router.post('/api/check/captcha', (req, res) => {
+  let sessionCaptcha = req.session[req.body.sid]
+  if (sessionCaptcha) {
+    if (req.body.captcha.toLowerCase() === sessionCaptcha) {
+      res.json({
+        code: 0,
+        msg: '验证成功'
+      })
+    } else {
+      res.json({
+        code: -1,
+        msg: '验证码错误'
+      })
+    }
+  } else {
+    res.json({
+      code: -2,
+      msg: '验证码失效'
+    })
+  }
+})
 
 router.post('/api/video/getblob', (req, res) => {
   try {
