@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@liveqing/liveplayer": "^2.3.3",
+    "@vue/compiler-sfc": "^3.2.37",
     "axios": "^0.20.0",
     "copy-webpack-plugin": "^4.6.0",
     "core-js": "^3.6.5",
@@ -26,6 +27,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.2.37",
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
     "cookie-parser": "^1.4.5",
@@ -47,6 +49,7 @@
     "svg-sprite-loader": "^5.0.0",
     "uuid": "^8.3.2",
     "video.js": "^7.15.4",
+    "vue-loader": "^15.9.8",
     "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.6.11",
     "zx-verify": "^0.0.2"
