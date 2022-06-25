@@ -31,6 +31,7 @@
 ## Project setup
 ```
 npm install
+(提示：这里由于路由版本的问题，最好使用npm install安装依赖，而不要使用cnpm install，否则会导致路由切换不生效的问题)
 ```
 
 ### Compiles and hot-reloads for development
