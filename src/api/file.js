@@ -21,5 +21,13 @@ export default {
       data: form,
       timeout: 0
     })
+  },
+  uploadMultiChunk(form) {
+    return request({
+      url: '/uploadMultiChunk',
+      method: 'post',
+      data: form,
+      timeout: 0
+    })
   }
 }

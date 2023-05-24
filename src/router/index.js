@@ -185,6 +185,21 @@ export const constRoutes = [
         }
       }
     ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: 'multiFile',
+    children: [
+      {
+        path: 'multiFile',
+        component: () => import('@/views/MultiFileUpload'),
+        meta: {
+          title: '多文件上传',
+          affix: true
+        }
+      }
+    ]
   }
 ]
 

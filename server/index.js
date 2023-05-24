@@ -25,10 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(api)
 app.use(express.static(path.resolve(__dirname, '../dist')))
 
-app.get('*', function(req, res) {
-  const html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
-  res.send(html)
-})
+// app.get('*', function(req, res) {
+//   const html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
+//   res.send(html)
+// })
 
 server.listen(3000)
 console.log('success listen ......')
