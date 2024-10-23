@@ -10,6 +10,8 @@ jobs:
       matrix:
         node-version: [10.15.3]
     steps:
+      - name: Upgrade npm
+        run: npm install -g npm@latest
       - name: Checkout
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
