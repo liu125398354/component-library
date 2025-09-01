@@ -34,7 +34,7 @@ function cpttWorkingDay(param1, param2) {
     }
     return delta + weekEnds
   } else {
-    return axios.get('/mock/time.json', {
+    return axios.get('./mock/time.json', {
       headers: {
         'Cache-Control': 'no-cache'
       }
