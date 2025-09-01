@@ -21,15 +21,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - name: Deploy
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # 官方推荐
-          branch: gh-pages
-          folder: dist
-          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 自带 token
+          branch: gh-pages                   # 部署到 gh-pages 分支
+          folder: dist                       # Vue2 默认打包目录是 dist
+          clean: true                        # 自动清理已删除的文件
